@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     wget \
     unzip \
     gnupg \
+    libpq-dev gcc \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -22,3 +23,6 @@ COPY . /app/
 
 # Указываем команду по умолчанию
 CMD ["poetry", "run", "python", "start.py"]
+
+#миграции откомичивать только если что то надо менять
+CMD ["poetry", "run", "alembic", "upgrade", "header"]

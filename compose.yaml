@@ -19,7 +19,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 11111
-      POSTGRES_DB: tg_ bot_egks
+      POSTGRES_DB: test_vpn
     ports:
       - "5432:5432"
 
