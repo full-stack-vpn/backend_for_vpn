@@ -19,8 +19,13 @@ depends_on: Union[str, Sequence[str], None] = None
 
 
 def upgrade() -> None:
-    pass
+    op.create_table(
+        'vpn_users',
+        sa.Column('user_name', sa.String, primary_key=True),
+        sa.Column('paid_or_free', sa.String),
+        sa.Column('over_day', sa.String),
+    )
 
 
 def downgrade() -> None:
-    pass
+    op.drop_table('vpn_users')

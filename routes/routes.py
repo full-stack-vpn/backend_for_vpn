@@ -1,8 +1,6 @@
 from fastapi import FastAPI, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
-from pathlib import Path
-
+from service.servise import work_with_vpn
 app = FastAPI()
 
 # Настройка CORS
@@ -17,4 +15,10 @@ app.add_middleware(
 @app.get("/")
 async def home():
     pass
+
+
+@app.get("/backend/{name_country}/{user_name}/")
+def get_vpn_config(name_country:str,user_name:str):
+    return work_with_vpn.get_comfig(name_country,user_name)
+
 

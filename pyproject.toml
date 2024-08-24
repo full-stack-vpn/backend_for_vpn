@@ -9,6 +9,9 @@ readme = "README.md"
 python = "^3.12"
 alembic = "^1.13.2"
 psycopg2 = "2.9.9"
+unicorn = "^2.0.1.post1"
+uvicorn = "^0.30.6"
+fastapi = "^0.112.1"
 
 
 [build-system]
