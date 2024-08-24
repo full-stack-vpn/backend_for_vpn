@@ -5,4 +5,4 @@ class work_with_vpn:
         if user_name in work_with_bd.bd_read():
             pass
         else:
-            pass
+            work_with_bd.bd_create("test")
