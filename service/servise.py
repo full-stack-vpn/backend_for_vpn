@@ -5,4 +5,9 @@ class work_with_vpn:
         if user_name in work_with_bd.bd_read():
             pass
         else:
-            work_with_bd.bd_create("test")
+            data ={
+                "user_name":name_country,
+                "paid_or_free":"off",
+                "over_day":"0",
+            }
+            work_with_bd.bd_create(data)

@@ -18,8 +18,8 @@ class work_with_bd:
 
             Session = sessionmaker(bind=engine)
             session = Session()
-            #user = user_data(user_name=data.get("user_name"), paid_or_free = data.get("paid_or_free"),over_day = data.get("over_day"))
-            user = user_data(user_name="artem",paid_or_free="yes",over_day="0.2")
+            user = user_data(user_name=data.get("user_name"), paid_or_free = data.get("paid_or_free"),over_day = data.get("over_day"))
+            #user = user_data(user_name="artem",paid_or_free="yes",over_day="0.2")
             session.add(user)
 
             session.commit()
